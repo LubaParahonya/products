@@ -1,0 +1,31 @@
+import * as actions from './action/actionsListCard';
+import * as actionsValueInputCategories from './action/actionsaddValueInputCatecories';
+import * as actionsValueInputDiscription from './action/actionsaddValueInputDiscription';
+import * as actionsValueInputPrice from './action/actionsAddValueInputPric';
+import * as actionsValueInputTitle from './action/actionsAddValueInputTitle';
+import * as actionsTitleValue from './action/actionsTitleValueReducer';
+import * as actionsFilterActiv from './action/actionFilterActiv';
+import * as actionsFilterLikeActiv from './action/actionsFilterLikeActive';
+import * as actionsFilterCategoties from './action/actionsFilterCategories';
+import * as actionsTotalCountElement from './action/actionsTotalCountElement';
+import * as actionsCurrentPage from './action/actionsCurrentPage';
+import * as actionsLastPageIndex from './action/actionsLastPageIndex';
+import * as actionsFirstPageIndex from './action/actionsFirstPageIndex';
+import * as actionsSearch from './action/actionsSearch';
+type InferValueTypes<T> = T extends {[key: string]: infer U}
+? U
+: never;
+export type ActionTypes = ReturnType<InferValueTypes<typeof actions>>;
+export type ActionTypesInputValueCategories = ReturnType<InferValueTypes<typeof actionsValueInputCategories>>;
+export type ActionTypesInputValueDiscription = ReturnType<InferValueTypes<typeof actionsValueInputDiscription>>;
+export type ActionTypesInputValuePrice = ReturnType<InferValueTypes<typeof actionsValueInputPrice>>;
+export type ActionTypesInputValueTitle = ReturnType<InferValueTypes<typeof actionsValueInputTitle>>;
+export type ActionTypesTitleValue = ReturnType<InferValueTypes<typeof actionsTitleValue>>;
+export type ActionTypesFilterActiv = ReturnType<InferValueTypes<typeof actionsFilterActiv>>;
+export type ActionTypesFilterLikeActiv = ReturnType<InferValueTypes<typeof actionsFilterLikeActiv>>;
+export type ActionTypesFilterCategoties = ReturnType<InferValueTypes<typeof actionsFilterCategoties>>;
+export type ActionTypesTotalCountElement = ReturnType<InferValueTypes<typeof actionsTotalCountElement>>;
+export type ActionTypesCurrentPage = ReturnType<InferValueTypes<typeof actionsCurrentPage>>;
+export type ActionTypesLastPageIndex = ReturnType<InferValueTypes<typeof actionsLastPageIndex>>;
+export type ActionTypesFirstPageIndex = ReturnType<InferValueTypes<typeof actionsFirstPageIndex>>;
+export type ActionTypesSearch = ReturnType<InferValueTypes<typeof actionsSearch>>;

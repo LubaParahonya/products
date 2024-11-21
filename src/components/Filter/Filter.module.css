@@ -1,0 +1,9 @@
+.boxFilterCategory{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    float: right;
+    padding: 2%;
+    /* background-color: aqua; */
+    gap: 0.6vw;
+}

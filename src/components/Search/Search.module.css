@@ -1,0 +1,9 @@
+.inputSearch{
+    width: 90%;
+    border-radius: 5px;
+    border: solid gray 2px;
+    opacity: 40%;
+    &:hover{
+        border: solid rgb(158, 119, 12) 2px;
+    }
+}
