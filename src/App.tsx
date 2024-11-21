@@ -7,7 +7,6 @@ import Card from './components/Card/Card'
 import Add from './components/Add/Add'
 import { useDispatch, useSelector, TypedUseSelectorHook  } from 'react-redux'
 import { initLastPageIndex} from './action/actionsLastPageIndex'
-import { initStateCategory} from './action/actionsFilterCategories'
 import { initState, } from './action/actionsListCard'
 import { inittotalCountElement } from './action/actionsTotalCountElement'
 
@@ -27,7 +26,6 @@ function App() {
   .then(result => result.json())
   result.map((el: ICard) => (setFilterCategory.push(el.catecories)))
   dispatch(initState(result))
-  // dispatch(initStateCategory(setFilterCategory))
   dispatch(inittotalCountElement(result))
   dispatch(initLastPageIndex(currentPage, perPage))
   }
