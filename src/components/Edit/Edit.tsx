@@ -24,9 +24,6 @@ const Edit: React.FC<Props> = (props) => {
       <form className={style.formBox}>
       <label htmlFor="title"  className={style.labelTitle}>Вы можете поменять только Title</label>
       <input className={style.inputTitle} type="text" id="title" value={props.titleValueReducer} onChange={(e)=> dispatch(editTitile(e.target.value))}/>
-      {/* <label htmlFor="category">Categories</label>
-      <input className={style.inputCategory} type="text" id="category" /> */}
-      
       <button  className={style.buttonEdit} onClick={()=> handelsubmitTitle(cardId, props.titleValueReducer)}>Сохранить</button>
     </form>
     </div>

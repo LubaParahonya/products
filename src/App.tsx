@@ -27,7 +27,7 @@ function App() {
   .then(result => result.json())
   result.map((el: ICard) => (setFilterCategory.push(el.catecories)))
   dispatch(initState(result))
-  dispatch(initStateCategory(setFilterCategory))
+  // dispatch(initStateCategory(setFilterCategory))
   dispatch(inittotalCountElement(result))
   dispatch(initLastPageIndex(currentPage, perPage))
   }

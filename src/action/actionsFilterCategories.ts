@@ -3,7 +3,11 @@ function inferLiteralFromString<T extends string>(arg: T): T{
     return arg;
     }
 
-export const initStateCategory = (result: string[]) =>({
+export const initStateCategory = (list :ICard[]) =>({
     type: inferLiteralFromString(INITIAL_STATE_CATEGORY),
-    payload: result
+    //payload: result
+    payload : {
+    list
+   }
+   
 })

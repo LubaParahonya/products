@@ -4,6 +4,7 @@ import { initfirstPageIndex } from '../../action/actionsFirstPageIndex.ts'
 import { initLastPageIndex } from '../../action/actionsLastPageIndex.ts'
 import { changePage} from '../../action/actionsCurrentPage.ts'
 import { connect, useDispatch } from "react-redux";
+import { initStateCategory } from '../../action/actionsFilterCategories.ts'
 
 
 type Props = {
@@ -11,12 +12,13 @@ type Props = {
   totalCountElement: number;
   lastPageIndex: number;
   firstPageIndex: number;
+  listButton: ICard[];
 };
 
 const Pagination: React.FC<Props> = (props) => {
     const dispatch = useDispatch()
     const pagination = []
-    let perPage = 6
+    let perPage = 9
     for(let i = 1; i <= Math.ceil(props.totalCountElement / perPage); i++){
         pagination.push(i)
     }
@@ -25,6 +27,9 @@ const handelSubmit = (el: number): void => {
     dispatch(changePage(el))
     dispatch(initLastPageIndex(el, perPage))
     dispatch(initfirstPageIndex(props.lastPageIndex, perPage))
+    console.log('listButton', props.listButton)
+    dispatch(initStateCategory(props.listButton))
+
 }
   return (
     <div className={style.boxInput}>

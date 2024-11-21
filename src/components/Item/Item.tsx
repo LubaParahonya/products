@@ -26,8 +26,7 @@ const Item: React.FC<Props> = (props) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const {id} = useParams<{id:string}>()
-  console.log('id', id)
-
+  
   const handelsubmit = (valueTitle: string, id:number): void => {
     dispatch(initTitleValue(valueTitle))
     navigate(`/edit/:${id}`)

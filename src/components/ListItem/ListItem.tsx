@@ -2,12 +2,13 @@
 import style from './ListItem.module.css'
 import Item from '../Item/Item'
 import Filter from '../Filter/Filter'
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import Pagination from '../Pagination/Pagination.tsx'
 import { IoAddCircleOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom'
 import Search from '../Search/Search.tsx'
 import Like from '../Like/Like.tsx'
+import { initStateCategory } from '../../action/actionsFilterCategories.ts';
 
 type Props = {
   listCard: ICard[];
@@ -19,7 +20,8 @@ type Props = {
 
 const ListItem: React.FC<Props> = (props) => {
   const navigate = useNavigate()
-  const arr = props.listCard.slice(props.lastPageIndex-6, props.lastPageIndex)
+  const arr = props.listCard.slice(props.lastPageIndex-9, props.lastPageIndex)
+  const dispatch = useDispatch()
 
   const getListByVisibilityFilter = (activ: string): ICard[] => {
     const allList = arr
@@ -41,7 +43,8 @@ const ListItem: React.FC<Props> = (props) => {
   let getCurrentList = getListByVisibilityFilter(props.filterActiv)
   let visiblList =  getCurrentList.filter(el => el.title.toUpperCase().indexOf(props.searchValue.toUpperCase()) > -1)
   let getList = getListIsLikeFilter(props.filterLikeActive)
-
+  dispatch(initStateCategory(getList))
+ 
 
   return (
     <div className={style.mainBox}>
@@ -64,7 +67,8 @@ const ListItem: React.FC<Props> = (props) => {
         url={el.url}
         />
       ))}
-       <Pagination />
+       <Pagination 
+       listButton ={getList}/>
     </div>
     </div>
     <Filter/>
