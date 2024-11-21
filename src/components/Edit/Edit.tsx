@@ -20,13 +20,16 @@ const Edit: React.FC<Props> = (props) => {
       navigate('/products')
     }
   return (
-    <form className={style.formBox}>
-      <label htmlFor="title">Title</label>
-      <input type="text" id="title" value={props.titleValueReducer} onChange={(e)=> dispatch(editTitile(e.target.value))}/>
-      <label htmlFor="category">Categories</label>
-      <input type="text" id="category" />
-      <button onClick={()=> handelsubmitTitle(cardId, props.titleValueReducer)}>Сохранить</button>
+    <div className={style.mainEdit}>
+      <form className={style.formBox}>
+      <label htmlFor="title"  className={style.labelTitle}>Вы можете поменять только Title</label>
+      <input className={style.inputTitle} type="text" id="title" value={props.titleValueReducer} onChange={(e)=> dispatch(editTitile(e.target.value))}/>
+      {/* <label htmlFor="category">Categories</label>
+      <input className={style.inputCategory} type="text" id="category" /> */}
+      
+      <button  className={style.buttonEdit} onClick={()=> handelsubmitTitle(cardId, props.titleValueReducer)}>Сохранить</button>
     </form>
+    </div>
   )
 }
 

@@ -1,18 +1,24 @@
 .mainboxLike{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 7%;
     .buttonlike{
-        width: 100%;
+    width: 100%;
     display: inline-block;
-    padding: 0.5vw;
+    padding: 0.25vw;
     border-radius: 8px;
     box-shadow: 0px 5px 10px 0px rgba(64, 54, 54, 0.5);
     text-transform: uppercase;
     font-family: "Red Hat Display";
-    font-size: 1vw;
-    font-weight: 600;
-    color: rgb(65, 65, 65);
+    font-size: 0.8vw;
+    font-weight: 500;
+    color: rgb(243, 240, 255);
     transition: all ease 500ms;
+    background-color: rgb(62, 71, 245);
+    border: none;
     &:hover{
-        color: rgb(125, 90, 58);
+        color: aliceblue;
         cursor: pointer;
         transform: scale(1.05);
         box-shadow: 0px 5px 10px 0px rgb(125, 90, 58);    

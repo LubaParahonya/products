@@ -34,14 +34,14 @@ const Item: React.FC<Props> = (props) => {
   }
 
   return (
-<div className={style.mainBox}>
+<div className={id ?style.mainBoxCard: style.mainBox}>
 <div  className={style.boxInfo} onClick={()=> {
       navigate(`/products/${props.id}`)}} >
     <img src={props.url} className={id ? style.url : style.urlNone} alt="logo" />
     <div className={style.textBox}>
-    <span className={style.catecories}>{props.catecories} </span>
     <span className={style.title}>{props.title}</span>
-    <span className={style.discription}>{id ? props.discription: null}</span>
+    <span className={id ?style.discription: style.discriptionNone}>{id ? props.discription: null}</span>
+    <span className={style.catecories}>{props.catecories} </span>
     <span className={style.price}>{props.price} руб</span>
     </div>
 </div>

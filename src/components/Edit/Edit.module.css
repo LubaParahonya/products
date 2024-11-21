@@ -1,5 +1,42 @@
-.formBox{
+.mainEdit{
     display: flex;
-    flex-direction: column;
-    width: 20%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .formBox{
+        text-align: center;
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            border-radius: 10px;
+            padding: 2vw;
+            box-shadow: 0px 5px 10px 0px rgba(203, 9, 164, 0.5);
+            background-color: rgb(180, 187, 247);
+            gap: 1vw;
+            height: 50%;
+            button:nth-child(3){
+                margin-top: auto;
+            }
+        .inputTitle{
+            padding: 0.5vw;
+            border-radius: 5px;
+            border: none;
+            color: rgb(70, 53, 23);
+            background-color: rgb(220, 220, 247);
+        }
+        .labelTitle{
+            color: rgb(70, 53, 23);
+        }
+        .buttonEdit{
+            padding: 0.5vw;
+            border-radius: 5px;
+            border: none;
+            text-transform: uppercase;
+            color: rgb(248, 247, 250);
+            background-color: rgb(23, 23, 219);
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
 }
