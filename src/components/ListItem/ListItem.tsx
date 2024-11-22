@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom'
 import Search from '../Search/Search.tsx'
 import Like from '../Like/Like.tsx'
 import { initStateCategory } from '../../action/actionsFilterCategories.ts';
-import { useEffect } from 'react';
 
 type Props = {
   listCard: ICard[];

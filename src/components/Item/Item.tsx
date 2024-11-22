@@ -17,7 +17,7 @@ type Props = {
   catecories: string;
   url: string;
   discription: string;
-  price: string;
+  price: number;
   isLike: boolean
 
 };
