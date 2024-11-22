@@ -9,7 +9,6 @@ import { useDispatch, useSelector, TypedUseSelectorHook  } from 'react-redux'
 import { initLastPageIndex} from './action/actionsLastPageIndex'
 import { initState, } from './action/actionsListCard'
 import { inittotalCountElement } from './action/actionsTotalCountElement'
-import { initStateCategory } from './action/actionsFilterCategories';
 
 const API_DATA = 'https://lubaparahonya.github.io/api-free/api.json'
 let perPage = 9
