@@ -12,7 +12,7 @@ type Props = {
   inputValueTitle: string;
   inputValueCatecories: string;
   inputValueDiscription: string;
-  inputValuePrice: string
+  inputValuePrice: number
 };
 const Add: React.FC<Props> = (props) => {
     const navigate = useNavigate()
@@ -34,7 +34,22 @@ const Add: React.FC<Props> = (props) => {
       e.preventDefault()
       dispatch(addValueInputPrice(e.target.value))
 }
+
+const validationForm = ()=>{
+  if(props.inputValueTitle.length < 3 || props.inputValueTitle.length > 70||
+     props.inputValueCatecories.length < 3 || props.inputValueCatecories.length > 70 ||
+     props.inputValueDiscription.length < 3 || props.inputValueDiscription.length > 70 ){
+    alert('вводимое значение должно состоять больше чем из 3-ох букв, но  меньше чем 60')
+  }if(props.inputValueTitle.length === 0 ||
+     props.inputValueCatecories.length === 0 ||
+     props.inputValueDiscription.length === 0 
+  ){
+    alert('Вы заполнили не все ячейки')
+  }
+  
+}
     const handelSubmitAdd: React.MouseEventHandler<HTMLButtonElement> = (e) =>{
+        validationForm()
         dispatch(additem(props.inputValueTitle, props.inputValueCatecories, props.inputValueDiscription, props.inputValuePrice))
         e.preventDefault()
         dispatch(addValueInputTitle(''))
@@ -53,7 +68,7 @@ const Add: React.FC<Props> = (props) => {
       <input type='text' onChange={(e) => handelSubmitInput(e)} value={props.inputValueTitle} className={style.inputBox} placeholder='Введите название'/>
       <input type='text' onChange={(e) => handelSubmitInputCategory(e)} value={props.inputValueCatecories} className={style.inputBox} placeholder='Введите категорию'/>
       <input type='text' onChange={(e) => handelSubmitInputDiscription(e)} value={props.inputValueDiscription} className={style.inputBox} placeholder='Введите описание'/>
-      <input type='text' onChange={(e) => handelSubmitInputPrice(e)} value={props.inputValuePrice} className={style.inputBox} placeholder='Введите цену'/>
+      <input type='number' onChange={(e) => handelSubmitInputPrice(e)} value={props.inputValuePrice} className={style.inputBox} placeholder='Введите цену'/>
       <button onClick={(e) => handelSubmitAdd(e)} className={style.inputBox}>Добавить карточку</button>
       <button onClick={(e)=> handelSubmit(e)} className={style.inputBox}>Вернуться на гланую</button>
     </form>

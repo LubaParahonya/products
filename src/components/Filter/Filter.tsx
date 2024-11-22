@@ -9,6 +9,7 @@ type Props = {
 };
 
 const Filter: React.FC<Props> = (props) => {
+
   return (
     <div className={style.boxFilterCategory}>
       {props.filterReducer.map(el => (

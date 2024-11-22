@@ -31,7 +31,7 @@ export const editItem = (id: number, value: string ) =>({
 
   export const additem = (inputValueTitle: string, valueInputCategory: string, 
                           valueInputDiscription: string, 
-                          valueInputPrice: string ) => ({
+                          valueInputPrice: number ) => ({
     type: inferLiteralFromString(ADD_ITEM),
     payload: {
                  title: inputValueTitle,

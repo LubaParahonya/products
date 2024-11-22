@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import Search from '../Search/Search.tsx'
 import Like from '../Like/Like.tsx'
 import { initStateCategory } from '../../action/actionsFilterCategories.ts';
+import { useEffect } from 'react';
 
 type Props = {
   listCard: ICard[];
@@ -44,6 +45,8 @@ const ListItem: React.FC<Props> = (props) => {
   let visiblList =  getCurrentList.filter(el => el.title.toUpperCase().indexOf(props.searchValue.toUpperCase()) > -1)
   let getList = getListIsLikeFilter(props.filterLikeActive)
   dispatch(initStateCategory(getList))
+  console.log(getList)
+ 
  
 
   return (

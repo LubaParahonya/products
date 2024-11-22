@@ -9,10 +9,10 @@ import { useDispatch, useSelector, TypedUseSelectorHook  } from 'react-redux'
 import { initLastPageIndex} from './action/actionsLastPageIndex'
 import { initState, } from './action/actionsListCard'
 import { inittotalCountElement } from './action/actionsTotalCountElement'
+import { initStateCategory } from './action/actionsFilterCategories';
 
 const API_DATA = 'https://lubaparahonya.github.io/api-free/api.json'
-const setFilterCategory: string[] = []
-let perPage = 6
+let perPage = 9
 
 function App() {
   interface RootState {
@@ -24,7 +24,6 @@ function App() {
   const getApiData = async () => {
   const result = await fetch(API_DATA)
   .then(result => result.json())
-  result.map((el: ICard) => (setFilterCategory.push(el.catecories)))
   dispatch(initState(result))
   dispatch(inittotalCountElement(result))
   dispatch(initLastPageIndex(currentPage, perPage))

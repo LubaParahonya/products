@@ -4,7 +4,7 @@ interface  ICard {
     discription: string 
     id: number 
     isLike: boolean 
-    price: string 
+    price: number 
     title: string 
     url: string 
 }

@@ -35,10 +35,10 @@ export const inputValueDiscription = (state: string ='', action: ActionTypesInpu
 
     }
 }
-export const inputValuePrice = (state: string = '', action: ActionTypesInputValuePrice): number | string => {
+export const inputValuePrice = (state: string = '', action: ActionTypesInputValuePrice): number | string=> {
     switch(action.type){
         case ADD_VALUE_INPUT_PRICE: {
-            return  action.payload
+            return  Number(action.payload)
         }
         default:
             return state
