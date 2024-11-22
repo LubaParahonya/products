@@ -44,10 +44,7 @@ const ListItem: React.FC<Props> = (props) => {
   let visiblList =  getCurrentList.filter(el => el.title.toUpperCase().indexOf(props.searchValue.toUpperCase()) > -1)
   let getList = getListIsLikeFilter(props.filterLikeActive)
   dispatch(initStateCategory(getList))
-  console.log(getList)
- 
- 
-
+  
   return (
     <div className={style.mainBox}>
     <div className={style.mainPart}>

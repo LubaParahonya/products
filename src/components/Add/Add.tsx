@@ -40,22 +40,25 @@ const validationForm = ()=>{
      props.inputValueCatecories.length < 3 || props.inputValueCatecories.length > 70 ||
      props.inputValueDiscription.length < 3 || props.inputValueDiscription.length > 70 ){
     alert('вводимое значение должно состоять больше чем из 3-ох букв, но  меньше чем 60')
-  }if(props.inputValueTitle.length === 0 ||
+  }else if(props.inputValueTitle.length === 0 ||
      props.inputValueCatecories.length === 0 ||
      props.inputValueDiscription.length === 0 
   ){
     alert('Вы заполнили не все ячейки')
+  } else if(props.inputValuePrice < 1){
+    alert('Товар не может стоить меньше 1 рубля')
+  }else{
+    dispatch(additem(props.inputValueTitle, props.inputValueCatecories, props.inputValueDiscription, props.inputValuePrice))
+    dispatch(addValueInputTitle(''))
+    dispatch(addValueInputCatecories(''))
+    dispatch(addValueInputDiscription(''))
+    dispatch(addValueInputPrice(''))
   }
   
 }
     const handelSubmitAdd: React.MouseEventHandler<HTMLButtonElement> = (e) =>{
-        validationForm()
-        dispatch(additem(props.inputValueTitle, props.inputValueCatecories, props.inputValueDiscription, props.inputValuePrice))
         e.preventDefault()
-        dispatch(addValueInputTitle(''))
-        dispatch(addValueInputCatecories(''))
-        dispatch(addValueInputDiscription(''))
-        dispatch(addValueInputPrice(''))
+        validationForm()
     }
     const handelSubmit:React.MouseEventHandler<HTMLButtonElement> = (e) =>{
       e.preventDefault()

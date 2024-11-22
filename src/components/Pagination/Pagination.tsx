@@ -27,7 +27,6 @@ const handelSubmit = (el: number): void => {
     dispatch(changePage(el))
     dispatch(initLastPageIndex(el, perPage))
     dispatch(initfirstPageIndex(props.lastPageIndex, perPage))
-    console.log('listButton', props.listButton)
     dispatch(initStateCategory(props.listButton))
 
 }
